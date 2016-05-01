@@ -1,4 +1,4 @@
-import scadepl.{Debugger, Debuggee}
+import scadepl.debugger.{Debugger, Debuggee}
 
 object DebuggerMain extends App {
   Debugger.launch(DebuggeeMain.getClass)
