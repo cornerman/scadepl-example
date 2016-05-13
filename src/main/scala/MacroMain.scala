@@ -1,4 +1,4 @@
-import scadepl.macros.Debug._
+import scadepl.Debug._
 
 object MacroMain extends App {
   println("started")
@@ -20,9 +20,11 @@ object MacroMain extends App {
         unseeBlock
       } else {
         val seeBlock = "two"
-        break(arg, seeBlock, field, inherited)
+        log(arg)
         seeBlock
       }
+
+      repl(_imports, _locals, _thises)
     }
   }
 

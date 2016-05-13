@@ -5,10 +5,9 @@ object Main extends App {
 
   val integers = List(1,2)
   val name = "a name"
-  val num = 3
 
-  log("num" -> num)
-  break("integers" -> integers, "name" -> name)
+  val foo: Int = repl("integers" -> integers, "name" -> name).get
+  log("foo" -> foo)
 
   println("finished")
 }

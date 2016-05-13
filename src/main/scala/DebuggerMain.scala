@@ -5,8 +5,6 @@ object DebuggerMain extends App {
 }
 
 object DebuggeeMain extends App {
-  import Debuggee._
-
   trait IBar {
     val inherited = "top"
   }
@@ -17,7 +15,7 @@ object DebuggeeMain extends App {
 
     def test(me: Option[Int]) = {
       val number = 0
-      if (me.filter(_ > number).isEmpty) break()
+      if (me.filter(_ > number).isEmpty) Debuggee.breakpoint()
     }
   }
 
