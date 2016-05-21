@@ -12,19 +12,18 @@ object MacroMain extends App {
   object Bar extends IBar {
     val field =  List(1)
     def func(arg: Int): String = {
-      log(arg)
       val local = 1
+      log(_idents(arg, field): _*)
 
+      import collection.mutable
       if (arg < local) {
         val unseeBlock = "one"
         unseeBlock
       } else {
         val seeBlock = "two"
-        log(arg)
+        repl(_imports, (_thises ++ _locals): _*)
         seeBlock
       }
-
-      repl(_imports, _locals, _thises)
     }
   }
 
